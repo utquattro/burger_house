@@ -7,14 +7,15 @@ class ImageModelTest(TestCase):
     
     def test_image_model_save_and_retrieve(self):
         image1 = Image(
-            title='title1',
-            image=File(open('img1.jpg','rb'))
+            title='burger1',
+            image=File(open('static/images/burger/1.png','rb')),
         )
+        
         image1.save()
-
+        print("image1.image: ", image1.image)
         image2 = Image(
-            title='title2',
-            image=File(open('img1.jpg','rb'))
+            title='burger2',
+            image=File(open('static/images/burger/2.png','rb'))
         )
         image2.save()
 
