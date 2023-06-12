@@ -15,3 +15,12 @@ class Menu(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Image(models.Model):
+    """"""
+    title = models.TextField(max_length=250, blank=False)
+    image = models.ImageField(upload_to='images')
+
+    def __str__(self):
+        return self.title
