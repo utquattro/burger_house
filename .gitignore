@@ -110,7 +110,8 @@ venv.bak/
 
 
 # static
-/static
+/static/admin
+/static/rest_framefork
 
 # mypy 
 .mypy_cache/ 
