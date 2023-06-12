@@ -9,7 +9,7 @@ class Menu(models.Model):
     weight = models.IntegerField(blank=True, validators=[MinValueValidator(1)])
     price = models.IntegerField(blank=False, validators=[MinValueValidator(1)])
     discount_price = models.IntegerField(blank=True, validators=[MinValueValidator(1)])
-    photo_url = models.TextField(blank=True)
+    photo_url = models.ImageField(upload_to='images')
     add_date = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=True, blank=True)
 
@@ -17,10 +17,3 @@ class Menu(models.Model):
         return self.title
 
 
-class Image(models.Model):
-    """"""
-    title = models.TextField(max_length=250, blank=False)
-    image = models.ImageField(upload_to='images')
-
-    def __str__(self):
-        return self.title

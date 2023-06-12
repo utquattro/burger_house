@@ -1,6 +1,5 @@
 from django.contrib import admin
 from .models import Menu
-from .models import Image
 # Register your models here.
 class MenuAdmin(admin.ModelAdmin):
     """"""
@@ -15,4 +14,3 @@ class MenuAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Menu, MenuAdmin)
-admin.site.register(Image)
