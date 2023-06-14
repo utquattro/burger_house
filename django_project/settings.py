@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'menu',
+    'djoser',
+    'rest_framework.authtoken',
     'rest_framework',
 ]
 
@@ -134,5 +136,21 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-
+#CORS settings
 CORS_ORIGIN_ALLOW_ALL = True
+
+
+#
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        #'rest_framework.authentication.TokenAuthentication', #по токену
+        #'rest_framework.authentication.BasicAuthentication', #базовая?
+        'rest_framework.authentication.SessionAuthentication', #по сессии
+    ]
+}
+
+# JWT 
+SIMPLE_JWT = {
+   'AUTH_HEADER_TYPES': ('JWT',),
+}
